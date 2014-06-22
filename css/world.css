@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html { height: 100%; }
+body {
+    color: white;
+    cursor: none !important;
+    font: 16px calibri, 'trebuchet ms', Arial, Helvetica, sans-serif;
+    height: 100%;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+}
+.viewport {
+    background: #000;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-perspective: 800px;
+       -moz-perspective: 800px;
+            perspective: 800px;
+    width: 100%;
+    z-index: 0;
+}
+
+#camera {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: translateZ(800px);
+            transform: translateZ(800px);
+}
+
+#world {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+}
+
+.space {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    position: absolute;
+    width: 2000px;
+    margin-left: -1000px;
+    height: 0;
+}
+
+.space > div {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    left: 50%;
+    position: absolute;
+    top: 0;
+}
+
+.door {
+    background: url(../img/door.png) 0 0 no-repeat;
+    height: 224px;
+    margin: -112px 0 0 -200px;
+    -webkit-transform: translateZ(-3000px);
+            transform: translateZ(-3000px);
+    width: 400px;
+}
+.door_closed { display: none; }
+.santa {
+    background: url(../img/santa.png) no-repeat;
+    height: 90px;
+    margin: -45px 0 0 -165px;
+    -webkit-transition: 1.5s;
+            transition: 1.5s;
+    -webkit-transform: translateZ(-2999px) translateX(-330px);
+            transform: translateZ(-2999px) translateX(-330px);
+    width: 330px;
+}
+.santa_moved {
+    -webkit-transform: translateZ(-2999px) translateX(330px);
+            transform: translateZ(-2999px) translateX(330px);
+}
+.santa_hidden { display: none; }
+
+.road {
+    border: dashed #666;
+    border-width: 0 10px;
+    width: 400px;
+    margin: -1500px 0 0 -200px;
+    height: 3000px;
+    -webkit-transform: rotateX(90deg) translateZ(-200px) translateY(-1500px);    
+            transform: rotateX(90deg) translateZ(-200px) translateY(-1500px);
+}
+.road_hidden { display: none; }
+
+.pic {
+    width: 599px;
+    height: 900px;
+    background: url(../img/ny.jpg);
+    display: none;
+    margin: -450px 0 0 -300px;
+    -webkit-transform: translateZ(-2500px) rotateY(180deg);
+            transform: translateZ(-2500px) rotateY(180deg);
+}
+.pic_visible { display: block; }
+.pic:before {
+    content: 'Picture by inSOLence http://insolense.deviantart.com/art/Happy-New-Year-421534956';
+    position: absolute;
+    bottom: 100%;
+    color: #666;
+    white-space: nowrap;
+    font: 1em calibri, Arial, Helvetica, sans-serif;
+}
+
+.text {
+    color: #fff;
+    font: bold 42px calibri;
+    left: 0 !important;
+    text-align: center;
+    text-shadow: 0 -2px 0 #000, 2px 0 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    width: 100%;
+}
+
+.text_0 {
+    opacity: 0;
+    -webkit-transition: 1.5s;
+            transition: 1.5s;
+    -webkit-transform: translateZ(-3500px);
+            transform: translateZ(-3500px);
+}
+.text_0_visible { opacity: 1; }
+
+.text_1 {
+    display: none;
+    -webkit-transform: translateZ(-3500px);
+            transform: translateZ(-3500px);    
+}
+.text_1_visible { display: block; }
+
+.text_2 {
+    display: none;
+    -webkit-transform: translateZ(-4300px);
+            transform: translateZ(-4300px);    
+}
+.text_2_visible { display: block; }
+
+.text_content {
+    display: inline-block;
+    text-align: left;
+}
+
+.crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #ccc;
+}
+.help {
+    position: absolute;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.5;
+}
