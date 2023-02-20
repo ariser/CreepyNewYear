@@ -145,13 +145,6 @@ body {
 }
 .text_1_visible { display: block; }
 
-.text_2 {
-    display: none;
-    -webkit-transform: translateZ(-4300px);
-            transform: translateZ(-4300px);    
-}
-.text_2_visible { display: block; }
-
 .text_content {
     display: inline-block;
     text-align: left;

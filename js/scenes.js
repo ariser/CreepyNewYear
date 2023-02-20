@@ -41,7 +41,6 @@
                 scene.sounds.pipe.start();
                 document.getElementById('text').classList.remove('text_0_visible');
                 document.getElementById('text_1').classList.add('text_1_visible');              
-                document.getElementById('text_2').classList.add('text_2_visible');              
             }
         }
     ];
